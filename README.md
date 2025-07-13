@@ -20,5 +20,9 @@ services:
       - 8096:8096
     restart: no
 ```
-To start the server, make sure you're in the [example-jellyfin](example-jelyfin) folder, then run: `docker compose up -d`  
+To start the server:
+  1. make sure you're in the [example-jellyfin](example-jelyfin) folder
+  2. run: `docker compose up -d`
+  3. go to `http://localhost:8096/`
+
 To stop the server, run: `docker compose down`
