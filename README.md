@@ -1,1 +1,24 @@
 # MVC-ModelBinding-Jellyfin-Clone
+
+This project is a simple clone of the first two steps of the Jellyfin [Jellyfin](https://jellyfin.org/) setup process. Source Code here: [Jellyfin GitHub](https://github.com/jellyfin/jellyfin). Jellyfin is a free, open-source, and self-hosted media server that lets you stream content you own to all of your devices.
+
+The first two steps of the setup are: 
+  1. Create an admin user
+  2. Add a library to your server
+
+## Example
+You can quickly see what this process looks like by running the docker compose which is located in the [example-jellyfin](./example-jellyfin) folder.
+```
+services:
+  jellyfin:
+    image: jellyfin/jellyfin
+    container_name: jellyfin
+    volumes:
+      - ./config:/config
+      - ./cache:/cache
+    ports:
+      - 8096:8096
+    restart: no
+```
+To start the server, make sure you're in the [example-jellyfin](example-jelyfin) folder, then run: `docker compose up -d`  
+To stop the server, run: `docker compose down`
