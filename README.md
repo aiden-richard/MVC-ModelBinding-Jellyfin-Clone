@@ -1,6 +1,6 @@
 # MVC-ModelBinding-Jellyfin-Clone
 
-This project is a simple clone of the first two steps of the Jellyfin [Jellyfin](https://jellyfin.org/) setup process. Source Code here: [Jellyfin GitHub](https://github.com/jellyfin/jellyfin). Jellyfin is a free, open-source, and self-hosted media server that lets you stream content you own to all of your devices.
+This project is a simple clone of the first two steps of the Jellyfin [Jellyfin](https://jellyfin.org/) setup process. Source Code here: [Jellyfin GitHub](https://github.com/jellyfin/jellyfin). Jellyfin is a free, open-source, and self-hosted media server that lets you stream content you own to all of your devices. It is built on the .NET platform.
 
 The first two steps of the setup are: 
   1. Create an admin user
