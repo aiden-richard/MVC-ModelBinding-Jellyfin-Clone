@@ -25,5 +25,5 @@ To start the server:
   2. run: `docker compose up -d`
   3. go to `http://localhost:8096/`
 
-To stop the server, run: `docker compose down`
+To stop the server, run: `docker compose down`  
 To reset the example, run: `reset-example.bat`
