@@ -26,4 +26,5 @@ To start the server:
   3. go to `http://localhost:8096/`
 
 To stop the server, run: `docker compose down`  
-To reset the example, run: `reset-example.bat`
+To reset the example, run: `reset-example.bat`  
+Disclaimer: In order for the example to be fully reset, you may need to clear localhost site data in your browser
