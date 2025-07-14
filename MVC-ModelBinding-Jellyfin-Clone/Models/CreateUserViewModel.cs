@@ -31,4 +31,22 @@ public class CreateUserViewModel
     [Required(ErrorMessage = "Password is required")]
     [DataType(DataType.Password)]
     public required string Password { get; set; }
+
+    /// <summary>
+    /// Role of the user, stored as a string
+    /// This can be "Admin" or "User"
+    /// </summary>
+    /// <remarks>
+    /// If more work is put into this project, consider using ASP.NET Identity for built-in role and claim management.
+    /// </remarks>
+    [Required(ErrorMessage = "Role is required")]
+    [RegularExpression(@"^(Admin|User)$", ErrorMessage = "Role must be either 'Admin' or 'User'")]
+    public required string Role { get; set; }
+
+    /// <summary>
+    /// Preferred language for the user, stored as a string
+    /// </summary>
+    [Required(ErrorMessage = "Preferred language is required")]
+    [StringLength(50, ErrorMessage = "Language name can't be longer than 50 characters")]
+    public required string PreferredLanguage { get; set; }
 }

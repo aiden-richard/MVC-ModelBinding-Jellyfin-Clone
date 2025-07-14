@@ -17,5 +17,20 @@
     <span asp-validation-for="Password"></span>
     <br />
 
+    <label asp-for="Role">Role</label>
+    <select asp-for="Role">
+        <option value="User">User</option>
+        <option value="Admin">Admin</option>
+    </select>
+    <span asp-validation-for="Role"></span>
+    <br />
+
+    <label asp-for="PreferredLanguage">PreferredLanguage</label>
+    <select asp-for="PreferredLanguage">
+        <option value="English">English</option>
+    </select>
+    <span asp-validation-for="PreferredLanguage"></span>
+    <br />
+
     <input type="submit" value="Create User"/>
 </form>
