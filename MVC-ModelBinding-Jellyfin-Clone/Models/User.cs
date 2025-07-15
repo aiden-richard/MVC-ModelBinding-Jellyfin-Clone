@@ -41,7 +41,7 @@ public class User(string username, byte[] passwordHash, byte[] passwordSalt, str
     public string Role { get; set; } = role;
 
     /// <summary>
-    /// Preffered language for the user, stored as a string
+    /// Preferred language for the user, stored as a string
     /// </summary>
     public string PreferredLanguage { get; set; } = preferredLanguage;
 }

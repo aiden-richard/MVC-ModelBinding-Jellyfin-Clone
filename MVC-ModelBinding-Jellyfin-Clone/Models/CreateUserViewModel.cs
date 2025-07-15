@@ -6,7 +6,7 @@ namespace MVC_ModelBinding_Jellyfin_Clone.Models;
 /// This class is used to create a new user
 /// It is needed so the Controller can take the
 /// password and Hash it before making a new User
-/// withe the hashed password and salt
+/// with the hashed password and salt
 /// </summary>
 /// <remarks>
 /// Some properties are duplicated from the User model.
@@ -39,8 +39,8 @@ public class CreateUserViewModel
     /// <remarks>
     /// If more work is put into this project, consider using ASP.NET Identity for built-in role and claim management.
     /// </remarks>
-    [Required(ErrorMessage = "Role is required")]
     [RegularExpression(@"^(Admin|User)$", ErrorMessage = "Role must be either 'Admin' or 'User'")]
+    [Required(ErrorMessage = "Role is required")]
     public required string Role { get; set; }
 
     /// <summary>
