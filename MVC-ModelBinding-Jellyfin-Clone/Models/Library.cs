@@ -17,6 +17,7 @@ public class Library
     /// Valid values are "Movies", "Music", "Books", and "Shows"
     /// </summary>
     [RegularExpression(@"^(Movies|Music|Books|Shows)$", ErrorMessage = "Content Type Must be one of (\"Movies\", \"Music\", \"Books\", and \"Shows\")")]
+    [Required(ErrorMessage = "A content type is required")]
     public string ContentType { get; set; } = string.Empty;
 
     /// <summary>
@@ -25,6 +26,7 @@ public class Library
     /// </summary>
     [StringLength(50, MinimumLength = 1, ErrorMessage = "Library name must not be longer than 50 characters")]
     [RegularExpression(@"^[a-zA-Z0-9_]+$", ErrorMessage = "Library name can only contain letters, numbers, and underscores")]
+    [Required(ErrorMessage = "A display name is required")]
     public string DisplayName { get; set; } = string.Empty;
 
     /// <summary>
@@ -32,5 +34,6 @@ public class Library
     /// Must start with a forward slash (/)
     /// </summary>
     [RegularExpression(@"^\/.*", ErrorMessage = "Directory must start with a forward slash (/)")]
+    [Required(ErrorMessage = "A directory is required")]
     public string Directory { get; set; } = string.Empty;
 }
