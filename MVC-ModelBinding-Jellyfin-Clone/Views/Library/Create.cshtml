@@ -1,0 +1,31 @@
+﻿@model Library
+
+@{
+    ViewData["Title"] = "Add a Library";
+}
+
+<h2>Add a Library</h2>
+
+<form method="post">
+    <label asp-for="ContentType">Content Type</label>
+    <select asp-for="ContentType">
+        <option value="Movies">Movies</option>
+        <option value="Music">Music</option>
+        <option value="Books">Books</option>
+        <option value="Shows">Shows</option>
+    </select>
+    <span asp-validation-for="ContentType"></span>
+    <br />
+
+    <label asp-for=DisplayName">Display Name</label>
+    <input asp-for="DisplayName" />
+    <span asp-validation-for="DisplayName"></span>
+    <br />
+
+    <label asp-for="Directory">Path to Library</label>
+    <input asp-for="Directory" />
+    <span asp-validation-for="Directory"></span>
+    <br />
+
+    <input type="submit" value="Create Library" />
+</form>
