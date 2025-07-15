@@ -27,7 +27,7 @@ public class CreateUserViewModel
     /// The user's password, stored as a string
     /// but will be hashed in the Create method of the UserController
     /// </summary>
-    [StringLength(100, MinimumLength = 1, ErrorMessage = "Password must not be longer than 100 characters")]
+    [StringLength(128, MinimumLength = 3, ErrorMessage = "Password must be between 3 and 128 characters")]
     [Required(ErrorMessage = "Password is required")]
     [DataType(DataType.Password)]
     public required string Password { get; set; }
