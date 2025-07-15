@@ -18,7 +18,7 @@ public class CreateUserViewModel
     /// The user's username, stored as a string
     /// Valid characters are A-Z, a-z, 0-9, and underscores
     /// </summary>
-    [StringLength(50, MinimumLength = 1)]
+    [StringLength(50, MinimumLength = 1, ErrorMessage = "Username must not be longer than 50 characters")]
     [RegularExpression(@"^[a-zA-Z0-9_]+$", ErrorMessage = "Username can only contain letters, numbers, and underscores")]
     [Required(ErrorMessage = "Username is required")]
     public required string Username { get; set; }
