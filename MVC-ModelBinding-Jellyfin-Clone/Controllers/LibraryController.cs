@@ -21,6 +21,8 @@ public class LibraryController : Controller
     {
         if (ModelState.IsValid)
         {   
+            TempData["Message"] = "Library created successfully!";
+
             // Add the library to the database
 
             // Redirect to the Libraries page

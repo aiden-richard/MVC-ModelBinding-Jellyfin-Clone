@@ -26,8 +26,10 @@ public class UserController(PasswordService passwordService) : Controller
         {
             // Hash the password
             PasswordService.CreatePasswordHash(new_user.Password, out byte[] passwordHash, out byte[] passwordSalt);
-            
+
             User user = new(new_user.Username, passwordHash, passwordSalt, new_user.Role, new_user.PreferredLanguage);
+
+            TempData["Message"] = "User created successfully!";
 
             // Add the user to the database
 

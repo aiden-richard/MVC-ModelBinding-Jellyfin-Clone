@@ -1,3 +1,16 @@
 ﻿@{
     ViewData["Title"] = "Users";
 }
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-7">
+            <h2 class="mb-4">Users</h2>
+            <p class="opacity-50">
+                @TempData["Message"]
+            </p>
+
+            <a class="btn btn-primary btn-light-blue float-end" asp-controller="User" asp-action="Create">Create User</a>
+        </div>
+    </div>
+</div>
