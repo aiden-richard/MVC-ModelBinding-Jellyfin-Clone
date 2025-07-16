@@ -43,7 +43,7 @@ public abstract class UserBase
     /// <summary>
     /// Indicates the preferred language of the user
     /// </summary>
-    [Required(ErrorMessage = "Preferred language is required")]
-    [EnumDataType(typeof(PreferredLanguageEnum), ErrorMessage = "Preferred Language must be one of (\"English\")")]
+    [Required(ErrorMessage = "A preferred language is required")]
+    [EnumDataType(typeof(PreferredLanguageEnum), ErrorMessage = "The only supported language is English")] 
     public PreferredLanguageEnum PreferredLanguage { get; set; } = PreferredLanguageEnum.English;
 }
