@@ -2,6 +2,10 @@
 
 namespace MVC_ModelBinding_Jellyfin_Clone.Models;
 
+/// <summary>
+/// This class represents a library in the jellyfin server
+/// Includes metadata such as display name, content type, and storage directory.
+/// </summary>
 public class Library
 {
     /// <summary>
@@ -27,7 +31,8 @@ public class Library
     /// Indicates the selected content type for the library
     /// </summary>
     [Required(ErrorMessage = "A content type is required")]
-    [EnumDataType(typeof(ContentTypeEnum), ErrorMessage = "Content Type Must be one of (\"Movies\", \"Music\", \"Books\", and \"Shows\")")]
+    [EnumDataType(typeof(ContentTypeEnum)
+        , ErrorMessage = "Content Type Must be one of (\"Movies\", \"Music\", \"Books\", and \"Shows\")")]
     public ContentTypeEnum ContentType { get; set; }
 
     /// <summary>
@@ -41,9 +46,18 @@ public class Library
 
     /// <summary>
     /// The directory where the library is stored, stored as a string
-    /// Must start with a forward slash (/)
+    /// The regex follows slightly stricter rules than the ones found at this link
+    /// https://www.cyberciti.biz/faq/linuxunix-rules-for-naming-file-and-directory-names/
+    /// Here, we allow only letters, numbers, dashes, and slashes.
+    /// The directory must also start with a slash
     /// </summary>
-    [RegularExpression(@"^\/.*", ErrorMessage = "Directory must start with a forward slash (/)")]
+    /// <remarks>
+    /// This directory should only be used in a read-only context
+    /// it will pull any available media from the directory
+    /// </remarks>
+    [StringLength(255, MinimumLength = 1, ErrorMessage = "Directory must not be longer than 255 characters")]
+    [RegularExpression(@"^\/[a-zA-Z0-9_\-/]*$"
+        , ErrorMessage = "Directory must start with '/' and contain only letters, numbers, dashes, and slashes.")]
     [Required(ErrorMessage = "A directory is required")]
     public required string Directory { get; set; }
 }
